@@ -15,6 +15,6 @@ public class RateMain {
 
     private String code;
 
-    private List<Rate> rates;
+//    private List<Rate> rates;
 
 }

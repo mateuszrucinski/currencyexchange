@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Builder
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 //@JsonDeserialize(as = RateDto.class)
 public class RateDto {
 

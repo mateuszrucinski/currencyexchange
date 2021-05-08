@@ -1,6 +1,5 @@
 package pl.matigre.curreny_exchange.client.dto;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -12,7 +11,7 @@ import java.util.List;
 @Setter
 @Builder
 //@JsonDeserialize(as = RateMainDto.class)
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class RateMainDto {
 
     private String table;
@@ -21,6 +20,6 @@ public class RateMainDto {
 
     private String code;
 
-    private List<RateDto> rates;
+//    private List<RateDto> rates;
 
 }

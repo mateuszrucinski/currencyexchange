@@ -14,9 +14,9 @@ public class RateClient {
     private final RateDtoToModelMapper rateDtoToModelMapper = new RateDtoToModelMapper();
 
     public RateMain getRateForObject(String table, String code) {
-        RateMainDto rateMain = restTemplate.getForObject(URI_RATE + "{table}/{rate}",
+        RateMainDto rateMainDto = restTemplate.getForObject(URI_RATE + "{table}/{rate}",
                 RateMainDto.class, table, code);
 
-        return rateDtoToModelMapper.mapRateMainDtoToRateMain(rateMain);
+        return rateDtoToModelMapper.mapRateMainDtoToRateMain(rateMainDto);
     }
 }
