@@ -1,15 +1,14 @@
 package pl.matigre.curreny_exchange.client.dto;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 //@JsonDeserialize(as = RateMainDto.class)
 //@RequiredArgsConstructor
 public class RateMainDto {
@@ -20,6 +19,6 @@ public class RateMainDto {
 
     private String code;
 
-//    private List<RateDto> rates;
+    private List<RateDto> rates;
 
 }

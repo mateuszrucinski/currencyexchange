@@ -15,8 +15,8 @@ public class RateDtoToModelMapper {
                 .table(rateMainDto.getTable())
                 .code(rateMainDto.getCode())
                 .currency(rateMainDto.getCurrency())
-//                .rates(rateMainDto.getRates().stream()
-//                        .map(this::mapRate).collect(Collectors.toList()))
+                .rates(rateMainDto.getRates().stream()
+                        .map(this::mapRate).collect(Collectors.toList()))
                 .build();
     }
 
