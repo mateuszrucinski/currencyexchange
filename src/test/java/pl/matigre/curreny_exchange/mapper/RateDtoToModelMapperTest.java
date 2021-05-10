@@ -34,20 +34,24 @@ class RateDtoToModelMapperTest {
         assertThrows(NullPointerException.class, () -> mapper.mapRateMainDtoToRateMain(null));
     }
 
+
     private RateMainDto rateMainDto() {
-        RateDto rateDto = new RateDto();
-
-
-        RateMainDto rateMainDto = new RateMainDto("a", "dolar amerykański", "usd", asList(rateDto));
-
-        return rateMainDto;
+        return RateMainDto.builder()
+                .code("1")
+                .currency("dolar amerykański")
+                .rates(asList(RateDto.builder()
+                        .build()))
+                .table("a")
+                .build();
     }
 
     private RateMain rateMain() {
-        Rate rate = new Rate();
-
-        RateMain rateMain = new RateMain("a", "dolar amerykański", "usd", asList(rate));
-
-        return rateMain;
+        return RateMain.builder()
+                .code("1")
+                .currency("dolar amerykański")
+                .rates(asList(Rate.builder()
+                        .build()))
+                .table("a")
+                .build();
     }
 }
