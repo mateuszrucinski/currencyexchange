@@ -11,20 +11,18 @@ public class RateDtoToModelMapper {
 
     public RateMain mapRateMainDtoToRateMain(RateMainDto rateMainDto) {
 
-        return RateMain.builder()
-                .table(rateMainDto.getTable())
-                .code(rateMainDto.getCode())
-                .currency(rateMainDto.getCurrency())
-                .rates(rateMainDto.getRates().stream()
-                        .map(this::mapRate).collect(Collectors.toList()))
-                .build();
+        RateMain rateMain = new RateMain(
+                rateMainDto.getTable(),
+                rateMainDto.getCurrency(),
+                rateMainDto.getCode(),
+                rateMainDto.getRates().stream().map(this::mapRate).collect(Collectors.toList())
+        );
+        return rateMain;
     }
 
     private Rate mapRate(RateDto rateDto) {
-        return Rate.builder()
-                .no(rateDto.getNo())
-                .effectiveDate(rateDto.getEffectiveDate())
-                .mid(rateDto.getMid())
-                .build();
+        Rate rate = new Rate(rateDto.getNo(), rateDto.getEffectiveDate(), rateDto.getMid());
+
+        return rate;
     }
 }
