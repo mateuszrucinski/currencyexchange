@@ -8,13 +8,11 @@ import pl.matigre.curreny_exchange.model.RateMain;
 import pl.matigre.curreny_exchange.service.RateService;
 
 @RestController
+@RequiredArgsConstructor
 public class RateController {
 
     private final RateService rateService;
 
-    public RateController(RateService rateService) {
-        this.rateService = rateService;
-    }
 
     @GetMapping("/rate/{table}/{code}")
     public RateMain getRate(@PathVariable String table, @PathVariable String code) {

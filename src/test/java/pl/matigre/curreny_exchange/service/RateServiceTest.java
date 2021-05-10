@@ -6,13 +6,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import pl.matigre.curreny_exchange.client.RateClient;
-import pl.matigre.curreny_exchange.client.dto.RateDto;
-import pl.matigre.curreny_exchange.client.dto.RateMainDto;
 import pl.matigre.curreny_exchange.model.Rate;
 import pl.matigre.curreny_exchange.model.RateMain;
-
-import java.math.BigDecimal;
-import java.time.LocalDate;
 
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
