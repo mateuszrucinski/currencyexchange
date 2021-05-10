@@ -1,6 +1,9 @@
 package pl.matigre.curreny_exchange.mapper;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.junit.jupiter.MockitoExtension;
 import pl.matigre.curreny_exchange.client.dto.RateDto;
 import pl.matigre.curreny_exchange.client.dto.RateMainDto;
 import pl.matigre.curreny_exchange.model.Rate;
@@ -10,9 +13,11 @@ import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@ExtendWith(MockitoExtension.class)
 class RateDtoToModelMapperTest {
 
-    private RateDtoToModelMapper mapper = new RateDtoToModelMapper();
+    @InjectMocks
+    private RateDtoToModelMapper mapper;
 
     @Test
     void should_map_rate_dto_to_model() {

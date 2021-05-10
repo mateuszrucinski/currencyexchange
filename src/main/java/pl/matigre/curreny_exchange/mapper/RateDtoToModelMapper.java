@@ -1,5 +1,6 @@
 package pl.matigre.curreny_exchange.mapper;
 
+import org.springframework.stereotype.Component;
 import pl.matigre.curreny_exchange.client.dto.RateDto;
 import pl.matigre.curreny_exchange.client.dto.RateMainDto;
 import pl.matigre.curreny_exchange.model.Rate;
@@ -7,6 +8,7 @@ import pl.matigre.curreny_exchange.model.RateMain;
 
 import java.util.stream.Collectors;
 
+@Component
 public class RateDtoToModelMapper {
 
     public RateMain mapRateMainDtoToRateMain(RateMainDto rateMainDto) {

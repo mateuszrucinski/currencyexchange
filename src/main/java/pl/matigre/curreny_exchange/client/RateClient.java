@@ -11,7 +11,11 @@ public class RateClient {
 
     public static final String URI_RATE = "https://api.nbp.pl/api/exchangerates/rates/";
     private final RestTemplate restTemplate = new RestTemplate();
-    private final RateDtoToModelMapper rateDtoToModelMapper = new RateDtoToModelMapper();
+    private final RateDtoToModelMapper rateDtoToModelMapper;
+
+    public RateClient(RateDtoToModelMapper rateDtoToModelMapper) {
+        this.rateDtoToModelMapper = rateDtoToModelMapper;
+    }
 
     public RateMain getRateForObject(String table, String code) {
         RateMainDto rateMainDto = restTemplate.getForObject(URI_RATE + "{table}/{rate}",
