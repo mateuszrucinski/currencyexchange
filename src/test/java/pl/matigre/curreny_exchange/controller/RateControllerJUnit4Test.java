@@ -1,7 +1,7 @@
 package pl.matigre.curreny_exchange.controller;
 
 import org.json.JSONException;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ import static org.mockito.Mockito.*;
 @SpringBootTest(
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @EnableAutoConfiguration(exclude = SecurityAutoConfiguration.class)
-class RateControllerTest {
+public class RateControllerJUnit4Test {
 
     @Autowired
     private TestRestTemplate testRestTemplate;
@@ -36,7 +36,7 @@ class RateControllerTest {
     private RateService service;
 
     @Test
-    void should_get_rate() throws JSONException {
+    public void should_get_rate() throws JSONException {
         //given
         final RateMain rateMain = rateMain();
         when(service.getRate("a", "eur")).thenReturn(rateMain);
